@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,li{
+            list-style: none;
+        }
+        .banner-wrap{
+            position: relative;
+            width: 600px;
+            height: 400px;
+            border: 2px;
+            margin: 0 auto;
+        }
+        .banner-wrap li{
+            display: none;
+            position: absolute;
+        }
+        img{
+            width: 600px;
+            height: 400px;
+        }
+        .btn{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 40px;
+            height: 40px;
+            margin: auto 0;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            background-color: rgb(126,125,125);
+        }
+        .prev{
+            left: 0;
+        }
+        .next{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-wrap">
+        <ul>
+            <li style="display: block;"><img src="http://pcsource.upupoo.com/theme/1783827852/previewFix.jpg" alt=""></li>
+            <li><img src="http://pcsource.upupoo.com/theme/2000748421/previewFix.jpg" alt=""></li>
+            <li><img src="http://pcsource.upupoo.com/theme/2000853167/previewFix.jpg" alt=""></li>
+            <li><img src="http://pcsource.upupoo.com/theme/2000728287/previewFix.jpg" alt=""></li>
+            <li><img src="http://pcsource.upupoo.com/theme/2000754736/previewFix.jpg" alt=""></li>
+            <li><img src="http://pcsource.upupoo.com/theme/2000864225/previewFix.jpg" alt=""></li>
+        </ul>
+        <div class="prev btn"> < </div>
+        <div class="next btn"> > </div>
+    </div>
+</body>
+<script>
+    let oPrev = document.getElementsByClassName("prev")[0];
+    let oNext = document.getElementsByClassName("next")[0];
+    let aLi = document.getElementsByTagName("li");
+    let i = 0;
+    // console.log(aLi.length)
+    oPrev.onclick = function(){
+        aLi[i].style.display = "none";
+        i--;
+        if(i < 0){
+            i = 5
+        }
+        aLi[i].style.display = "block"
+    }
+    oNext.onclick = function(){
+        aLi[i].style.display = "none";
+        i++;
+        if(i >= 6){
+            i = 0
+        }
+        aLi[i].style.display = "block";
+    }
+</script>
+</html>

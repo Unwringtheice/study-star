@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #wrap span{
+        display: inline-block;
+        width: 70px;
+        height: 40px;
+        border: 1px solid;
+        margin: 2px;
+        text-align: center;
+        line-height: 40px;
+        font-size: 14px;
+    }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- <span>1</span> -->
+    </div>
+</body>
+<script>
+    let oWrap = document.getElementById("wrap"),
+    str = "";
+    for(let i=0; i<=9;i++){
+        for(let j=1;j<=i ;j++){
+            str +="<span>"+i+"*"+j+"="+i*j+"</span>" 
+        }
+        // str +="<span>"+i+"</span>" 
+
+        str +="<br>"
+    }
+    oWrap.innerHTML = str;
+</script>
+</html>

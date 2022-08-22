@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="">
+    <title>登录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            user-select: none
+        }
+
+        #btn {
+            width: 150px;
+            height: 30px;
+            display: block;
+        }
+
+        #tip {
+            display: none;
+            position: fixed;
+            z-index: 99999999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        #tip .main {
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 260px;
+            height: 300px;
+            box-shadow: 1px 1px 50px rgba(0, 0, 0, .3);
+            border-radius: 2px;
+            background-color: #fff;
+        }
+
+        #tip .main .title {
+            box-sizing: border-box;
+            width: 100%;
+            height: 43px;
+            padding: 0 10px;
+            line-height: 43px;
+            background-color: rgb(248, 248, 248);
+            border-bottom: 1px solid #eee;
+            color: #333;
+        }
+
+        #tip .main .title span:nth-child(1) {
+            float: left;
+            font-size: 14px;
+        }
+
+        #tip .main .title span:nth-child(2) {
+            float: right;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #tip .main .content {
+            box-sizing: border-box;
+            padding-left: 20px;
+            height: 64px;
+            font-size: 14px;
+            line-height: 70px;
+        }
+
+        #tip .main .content span {
+            font-size: 20px;
+        }
+
+        #tip .main .content .in1 {
+            height: 25px;
+        }
+
+        #tip .main .content .in2 {
+            height: 25px;
+        }
+
+        #tip .main .btn {
+            position: absolute;
+            bottom: 30px;
+            right: 80px;
+            width: 100px;
+            height: 45px;
+            line-height: 40px;
+            border-color: #1E9FFF;
+            background-color: #1E9FFF;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">点击弹出登录界面</button>
+    <div id="tip">
+        <div class="main">
+            <div class="title">
+                <span>登录框</span>
+                <span class="close">×</span>
+            </div>
+            <div class="content">
+                <span>账号：</span>
+                <input class="in1 " type="text">
+                <br>
+                <span>密码：</span>
+                <input class="in2 " type="password">
+            </div>
+            <div class="btn">确认</div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            let btn = document.getElementById("btn");
+            let tip = document.getElementById("tip");
+            let close = document.querySelector("#tip .main .title span.close");
+            let sure = document.querySelector("#tip .main .btn");
+
+            btn.onclick = function () {
+                tip.style.display = "block";
+            };
+            close.onclick = sure.onclick = function () {
+                tip.style.display = "none";
+            };
+
+
+        })();
+    </script>
+</body>
+
+</html>
